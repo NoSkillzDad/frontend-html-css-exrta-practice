@@ -4,11 +4,18 @@ body {
     background-color: hsl(35, 40%, 91%);
     color: hsl(25, 22%, 56%);
     font-family: Avenir, Arial, sans-serif;
+    align-items: center;
 }
 
 .container {
+    margin: auto;
+    max-width: 1200px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
     background-color: hsl(35, 40%, 95%);
     border-radius: 4px;
+
 }
 
 .item {
@@ -16,4 +23,30 @@ body {
     border: 1px solid hsl(35, 40%, 78%);
     border-radius: 4px;
     box-shadow: 2px 2px 4px hsl(35, 40%, 78%);
+    /*padding: 16px;*/
+    padding: 32px; /*added by me*/
+    margin: 20px;
+}
+
+#aside {
+    flex-basis: 300px;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+#main {
+    flex: 1 1 auto;
+    /*justify-content: flex-start;*/
+}
+
+@media only screen and (max-width: 640px) {
+    .container {
+        flex-direction: column;
+        min-width: 200px;
+    }
+    #aside {
+        flex: 1 1 auto;
+    }
+    #main {
+        flex: 1 1 auto;
+    }
 }
